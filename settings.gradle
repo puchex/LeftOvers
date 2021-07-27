@@ -1,0 +1,2 @@
+rootProject.name = "LeftOvers"
+include ':app'

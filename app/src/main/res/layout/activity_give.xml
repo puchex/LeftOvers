@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GiveActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/actor"
+        android:includeFontPadding="true"
+        android:text="Donate Food"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/info_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:hint="Add some details here."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.01999998">
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E1E1E1"
+            android:fontFamily="@font/actor"
+            android:minLines="2"
+            android:maxLines="4"
+            android:inputType="textMultiLine"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium">
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/quantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/info_text"
+        app:layout_constraintStart_toStartOf="@+id/info_text"
+        app:layout_constraintTop_toBottomOf="@+id/info_text"
+        app:layout_constraintVertical_bias="0.01999998">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/actor"
+            android:hint="Sufficient for how many"
+            android:inputType="number"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium">
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <fragment
+        android:id="@+id/map_fragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:maxHeight="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/donateButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.92"
+        tools:visibility="invisible">
+
+    </fragment>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:text="Add Pickup Point"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#0C0C0C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/info_text"
+        app:layout_constraintStart_toStartOf="@+id/info_text"
+        app:layout_constraintTop_toBottomOf="@+id/quantity"
+        app:layout_constraintVertical_bias="0.00999999">
+
+    </TextView>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:checkedButton="@id/current_location"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/info_text"
+        app:layout_constraintStart_toStartOf="@+id/info_text"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.0">
+
+        <RadioButton
+            android:id="@+id/current_location"
+            android:layout_width="match_parent"
+            android:paddingHorizontal="16dp"
+            android:layout_height="wrap_content"
+            android:text="Current Location"
+            android:textSize="14sp"></RadioButton>
+
+        <RadioButton
+            android:id="@+id/different_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:text="Different Location"
+            android:textSize="14sp">
+
+        </RadioButton>
+    </RadioGroup>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/donateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:fontFamily="@font/actor"
+        android:text="DONATE !"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/info_text"
+        app:layout_constraintStart_toStartOf="@+id/info_text"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.96">
+
+    </com.google.android.material.button.MaterialButton>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
